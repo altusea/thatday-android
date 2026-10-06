@@ -1,3 +1,73 @@
 <resources>
     <string name="app_name">ThatDay</string>
+
+    <!-- List -->
+    <string name="list_empty_title">Nothing yet</string>
+    <string name="list_empty_body">Record an event and when it happened.</string>
+    <string name="relative_today">Today</string>
+    <plurals name="relative_future_days">
+        <item quantity="one">in %d day</item>
+        <item quantity="other">in %d days</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="one">in %d week</item>
+        <item quantity="other">in %d weeks</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="one">in %d month</item>
+        <item quantity="other">in %d months</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="one">in %d year</item>
+        <item quantity="other">in %d years</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="one">%d day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="one">%d week ago</item>
+        <item quantity="other">%d weeks ago</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="one">%d month ago</item>
+        <item quantity="other">%d months ago</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="one">%d year ago</item>
+        <item quantity="other">%d years ago</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">New event</string>
+    <string name="edit_edit_title">Edit event</string>
+    <string name="field_title_label">What happened?</string>
+    <string name="field_title_placeholder">e.g. Cancel the credit card</string>
+    <string name="field_date_label">When?</string>
+    <string name="field_note_label">Note (optional)</string>
+    <string name="kind_all_day">All day</string>
+    <string name="kind_timed">Set time</string>
+    <string name="remind_label">Remind me %1$d day before</string>
+    <string name="cd_pick_date">Pick a date</string>
+    <string name="cd_pick_time">Pick a time</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">Note</string>
+
+    <!-- Actions -->
+    <string name="action_add">Add</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_keep_editing">Keep editing</string>
+    <string name="common_ok">OK</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">Delete this event?</string>
+    <string name="delete_dialog_message">This cannot be undone.</string>
+    <string name="discard_dialog_title">Discard changes?</string>
+    <string name="discard_dialog_message">Your edits will be lost.</string>
 </resources>
