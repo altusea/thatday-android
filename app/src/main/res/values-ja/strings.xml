@@ -1,0 +1,65 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">まだ記録がありません</string>
+    <string name="list_empty_body">出来事と、それが起きた時間を記録します。</string>
+    <string name="relative_today">今日</string>
+    <plurals name="relative_future_days">
+        <item quantity="other">%d 日後</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="other">%d 週間後</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="other">%d か月後</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="other">%d 年後</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="other">%d 日前</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="other">%d 週間前</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="other">%d か月前</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="other">%d 年前</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">記録する</string>
+    <string name="edit_edit_title">編集</string>
+    <string name="field_title_label">何があった？</string>
+    <string name="field_title_placeholder">例：クレジットカードを解約</string>
+    <string name="field_date_label">いつ？</string>
+    <string name="field_note_label">メモ（任意）</string>
+    <string name="kind_all_day">終日</string>
+    <string name="kind_timed">時刻を指定</string>
+    <plurals name="remind_label">
+        <item quantity="other">%d 日前に通知</item>
+    </plurals>
+    <string name="cd_pick_date">日付を選択</string>
+    <string name="cd_pick_time">時刻を選択</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">メモ</string>
+
+    <!-- Actions -->
+    <string name="action_add">記録する</string>
+    <string name="action_back">戻る</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_save">保存</string>
+    <string name="action_delete">削除</string>
+    <string name="action_edit">編集</string>
+    <string name="action_discard">破棄</string>
+    <string name="action_keep_editing">編集を続ける</string>
+    <string name="common_ok">OK</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">この記録を削除しますか？</string>
+    <string name="delete_dialog_message">この操作は取り消せません。</string>
+    <string name="discard_dialog_title">変更を破棄しますか？</string>
+    <string name="discard_dialog_message">編集内容は失われます。</string>
+</resources>

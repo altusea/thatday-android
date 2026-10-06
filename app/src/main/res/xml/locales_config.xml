@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Languages offered for per-app language selection (Android 13+).
-  Covers the six UN official languages; Chinese is split by script so
-  Simplified and Traditional both resolve correctly.
+  Covers the six UN official languages plus Japanese and Korean;
+  Chinese is split by script so Simplified and Traditional both resolve.
 -->
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
     <locale android:name="ar" />
     <locale android:name="en" />
     <locale android:name="es" />
     <locale android:name="fr" />
+    <locale android:name="ja" />
+    <locale android:name="ko" />
     <locale android:name="ru" />
     <locale android:name="zh-Hans" />
     <locale android:name="zh-Hant" />

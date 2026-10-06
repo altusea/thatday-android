@@ -1,0 +1,65 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">아직 기록이 없습니다</string>
+    <string name="list_empty_body">사건과 그 일이 일어난 시간을 기록하세요.</string>
+    <string name="relative_today">오늘</string>
+    <plurals name="relative_future_days">
+        <item quantity="other">%d일 후</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="other">%d주 후</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="other">%d개월 후</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="other">%d년 후</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="other">%d일 전</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="other">%d주 전</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="other">%d개월 전</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="other">%d년 전</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">기록하기</string>
+    <string name="edit_edit_title">편집</string>
+    <string name="field_title_label">무슨 일이 있었나요?</string>
+    <string name="field_title_placeholder">예: 신용카드 해지</string>
+    <string name="field_date_label">언제?</string>
+    <string name="field_note_label">메모(선택)</string>
+    <string name="kind_all_day">종일</string>
+    <string name="kind_timed">시간 지정</string>
+    <plurals name="remind_label">
+        <item quantity="other">%d일 전에 알림</item>
+    </plurals>
+    <string name="cd_pick_date">날짜 선택</string>
+    <string name="cd_pick_time">시간 선택</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">메모</string>
+
+    <!-- Actions -->
+    <string name="action_add">기록하기</string>
+    <string name="action_back">뒤로</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_save">저장</string>
+    <string name="action_delete">삭제</string>
+    <string name="action_edit">편집</string>
+    <string name="action_discard">버리기</string>
+    <string name="action_keep_editing">계속 편집</string>
+    <string name="common_ok">확인</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">이 기록을 삭제할까요?</string>
+    <string name="delete_dialog_message">삭제하면 되돌릴 수 없습니다.</string>
+    <string name="discard_dialog_title">변경 사항을 버릴까요?</string>
+    <string name="discard_dialog_message">편집 내용이 사라집니다.</string>
+</resources>
