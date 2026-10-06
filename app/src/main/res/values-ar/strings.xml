@@ -107,4 +107,13 @@
     <string name="delete_dialog_message">لا يمكن التراجع عن هذا الإجراء.</string>
     <string name="discard_dialog_title">تجاهل التغييرات؟</string>
     <string name="discard_dialog_message">ستفقد تعديلاتك.</string>
+
+    <!-- Backup -->
+    <string name="cd_more_options">خيارات إضافية</string>
+    <string name="action_export">تصدير نسخة احتياطية</string>
+    <string name="action_import">استيراد نسخة احتياطية</string>
+    <string name="backup_export_success">تم حفظ النسخة الاحتياطية · السجلات: %1$d</string>
+    <string name="backup_export_failed">تعذّر حفظ النسخة الاحتياطية</string>
+    <string name="backup_import_result">المستورد: %1$d · المتخطّى: %2$d</string>
+    <string name="backup_import_failed">تعذّر قراءة ملف النسخة الاحتياطية</string>
 </resources>

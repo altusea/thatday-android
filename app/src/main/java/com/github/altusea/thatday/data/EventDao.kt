@@ -18,8 +18,14 @@ interface EventDao {
     @Query("SELECT * FROM events WHERE id = :id")
     suspend fun getById(id: Long): Event?
 
+    @Query("SELECT * FROM events ORDER BY occurredAt ASC")
+    suspend fun getAll(): List<Event>
+
     @Insert
     suspend fun insert(event: Event): Long
+
+    @Insert
+    suspend fun insertAll(events: List<Event>): List<Long>
 
     @Update
     suspend fun update(event: Event)

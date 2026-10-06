@@ -62,4 +62,13 @@
     <string name="delete_dialog_message">删除后无法恢复。</string>
     <string name="discard_dialog_title">放弃修改？</string>
     <string name="discard_dialog_message">未保存的内容会丢失。</string>
+
+    <!-- Backup -->
+    <string name="cd_more_options">更多选项</string>
+    <string name="action_export">导出备份</string>
+    <string name="action_import">导入备份</string>
+    <string name="backup_export_success">备份已保存 · 记录数：%1$d</string>
+    <string name="backup_export_failed">无法保存备份</string>
+    <string name="backup_import_result">已导入 %1$d · 已跳过 %2$d</string>
+    <string name="backup_import_failed">无法读取备份文件</string>
 </resources>

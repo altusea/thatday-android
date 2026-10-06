@@ -12,10 +12,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         // Mandatory on target 36+ (DESIGN.md §3.0): apps cannot opt out of edge-to-edge.
         enableEdgeToEdge()
-        val repository = (application as ThatDayApplication).repository
+        val app = application as ThatDayApplication
         setContent {
             ThatDayTheme {
-                ThatDayApp(repository = repository)
+                ThatDayApp(repository = app.repository, backupManager = app.backupManager)
             }
         }
     }

@@ -1,17 +1,23 @@
 package com.github.altusea.thatday.ui.list
 
+import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.altusea.thatday.data.Event
 import com.github.altusea.thatday.data.EventRepository
+import com.github.altusea.thatday.data.backup.BackupManager
 import com.github.altusea.thatday.time.Relative
 import com.github.altusea.thatday.time.RelativeTime
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import java.time.ZoneId
 
 data class EventGroup(
@@ -26,7 +32,43 @@ data class EventListUiState(
     val isEmpty: Boolean get() = !loading && groups.isEmpty()
 }
 
-class EventListViewModel(repository: EventRepository) : ViewModel() {
+/** One-shot result of a backup/restore action, resolved to text by the UI. */
+sealed interface BackupMessage {
+    data class Exported(val count: Int) : BackupMessage
+    data object ExportFailed : BackupMessage
+    data class Imported(val imported: Int, val skipped: Int) : BackupMessage
+    data object ImportFailed : BackupMessage
+}
+
+class EventListViewModel(
+    repository: EventRepository,
+    private val backupManager: BackupManager,
+) : ViewModel() {
+
+    private val _messages = MutableSharedFlow<BackupMessage>(extraBufferCapacity = 4)
+    val messages: SharedFlow<BackupMessage> = _messages.asSharedFlow()
+
+    fun exportBackup(uri: Uri) {
+        viewModelScope.launch {
+            val message = runCatching { backupManager.export(uri) }
+                .fold(
+                    onSuccess = { BackupMessage.Exported(it) },
+                    onFailure = { BackupMessage.ExportFailed },
+                )
+            _messages.emit(message)
+        }
+    }
+
+    fun importBackup(uri: Uri) {
+        viewModelScope.launch {
+            val message = runCatching { backupManager.import(uri) }
+                .fold(
+                    onSuccess = { BackupMessage.Imported(imported = it.imported, skipped = it.skipped) },
+                    onFailure = { BackupMessage.ImportFailed },
+                )
+            _messages.emit(message)
+        }
+    }
 
     val uiState: StateFlow<EventListUiState> =
         combine(repository.observeEvents(), nowTicker()) { events, now ->

@@ -1,5 +1,8 @@
 package com.github.altusea.thatday.ui.list
 
+import android.content.res.Resources
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,22 +17,33 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
@@ -42,6 +56,7 @@ import com.github.altusea.thatday.R
 import com.github.altusea.thatday.data.Event
 import com.github.altusea.thatday.data.EventRepository
 import com.github.altusea.thatday.data.TimeKind
+import com.github.altusea.thatday.data.backup.BackupManager
 import com.github.altusea.thatday.time.Relative
 import com.github.altusea.thatday.time.RelativeTime
 import com.github.altusea.thatday.ui.relativeText
@@ -52,17 +67,36 @@ import java.util.Locale
 @Composable
 fun EventListScreen(
     repository: EventRepository,
+    backupManager: BackupManager,
     onAddEvent: () -> Unit,
     onOpenEvent: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val viewModel: EventListViewModel = viewModel(
-        factory = viewModelFactory { initializer { EventListViewModel(repository) } },
+        factory = viewModelFactory { initializer { EventListViewModel(repository, backupManager) } },
     )
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val locale = LocalConfiguration.current.locales[0]
     val zone = ZoneId.systemDefault()
+
+    val resources = LocalResources.current
+    val snackbarHostState = remember { SnackbarHostState() }
+    var menuExpanded by remember { mutableStateOf(false) }
+
+    val exportLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument(BackupManager.MIME_TYPE),
+    ) { uri -> uri?.let(viewModel::exportBackup) }
+
+    val importLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocument(),
+    ) { uri -> uri?.let(viewModel::importBackup) }
+
+    LaunchedEffect(Unit) {
+        viewModel.messages.collect { message ->
+            snackbarHostState.showSnackbar(message.asText(resources))
+        }
+    }
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -74,9 +108,45 @@ fun EventListScreen(
                         style = MaterialTheme.typography.titleLarge,
                     )
                 },
+                actions = {
+                    IconButton(onClick = { menuExpanded = true }) {
+                        Icon(
+                            imageVector = Icons.Filled.MoreVert,
+                            contentDescription = stringResource(R.string.cd_more_options),
+                        )
+                    }
+                    DropdownMenu(
+                        expanded = menuExpanded,
+                        onDismissRequest = { menuExpanded = false },
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.action_export)) },
+                            onClick = {
+                                menuExpanded = false
+                                exportLauncher.launch(
+                                    BackupManager.suggestedFileName(System.currentTimeMillis()),
+                                )
+                            },
+                        )
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.action_import)) },
+                            onClick = {
+                                menuExpanded = false
+                                importLauncher.launch(
+                                    arrayOf(
+                                        BackupManager.MIME_TYPE,
+                                        "text/plain",
+                                        "application/octet-stream",
+                                    ),
+                                )
+                            },
+                        )
+                    }
+                },
                 scrollBehavior = scrollBehavior,
             )
         },
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
             ExtendedFloatingActionButton(
                 onClick = onAddEvent,
@@ -221,3 +291,11 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 }
 
 private val MAX_CONTENT_WIDTH = 640.dp
+
+private fun BackupMessage.asText(resources: Resources): String = when (this) {
+    is BackupMessage.Exported -> resources.getString(R.string.backup_export_success, count)
+    BackupMessage.ExportFailed -> resources.getString(R.string.backup_export_failed)
+    is BackupMessage.Imported ->
+        resources.getString(R.string.backup_import_result, imported, skipped)
+    BackupMessage.ImportFailed -> resources.getString(R.string.backup_import_failed)
+}

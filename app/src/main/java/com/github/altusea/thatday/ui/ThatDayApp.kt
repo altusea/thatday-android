@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.github.altusea.thatday.data.EventRepository
+import com.github.altusea.thatday.data.backup.BackupManager
 import com.github.altusea.thatday.ui.detail.EventDetailScreen
 import com.github.altusea.thatday.ui.edit.EventEditScreen
 import com.github.altusea.thatday.ui.list.EventListScreen
@@ -25,12 +26,13 @@ private object Routes {
 }
 
 @Composable
-fun ThatDayApp(repository: EventRepository) {
+fun ThatDayApp(repository: EventRepository, backupManager: BackupManager) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.LIST) {
         composable(Routes.LIST) {
             EventListScreen(
                 repository = repository,
+                backupManager = backupManager,
                 onAddEvent = { navController.navigate(Routes.editNew()) },
                 onOpenEvent = { navController.navigate(Routes.detail(it)) },
             )

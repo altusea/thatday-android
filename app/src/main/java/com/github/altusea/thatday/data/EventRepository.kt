@@ -1,5 +1,7 @@
 package com.github.altusea.thatday.data
 
+import com.github.altusea.thatday.data.backup.BackupMerge
+import com.github.altusea.thatday.data.backup.ImportResult
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -62,6 +64,26 @@ class EventRepository(
     }
 
     suspend fun deleteEvent(id: Long) = dao.deleteById(id)
+
+    /** All events, for backup export. */
+    suspend fun allEvents(): List<Event> = dao.getAll()
+
+    /** Merge restored events in without deleting or overwriting anything. */
+    suspend fun importMissing(incoming: List<Event>): ImportResult {
+        val merge = BackupMerge.splitNew(existing = dao.getAll(), incoming = incoming)
+        if (merge.newEvents.isNotEmpty()) {
+            val timestamp = now()
+            val toInsert = merge.newEvents.map { event ->
+                event.copy(
+                    id = 0,
+                    createdAt = event.createdAt.takeIf { it > 0 } ?: timestamp,
+                    updatedAt = event.updatedAt.takeIf { it > 0 } ?: timestamp,
+                )
+            }
+            dao.insertAll(toInsert)
+        }
+        return ImportResult(imported = merge.newEvents.size, skipped = merge.skipped)
+    }
 
     suspend fun eventsWithFutureReminder(): List<Event> = dao.getWithFutureReminder(now())
 }

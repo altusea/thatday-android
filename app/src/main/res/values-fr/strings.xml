@@ -80,4 +80,13 @@
     <string name="delete_dialog_message">Cette action est irréversible.</string>
     <string name="discard_dialog_title">Abandonner les modifications ?</string>
     <string name="discard_dialog_message">Vos modifications seront perdues.</string>
+
+    <!-- Backup -->
+    <string name="cd_more_options">Plus d\'options</string>
+    <string name="action_export">Exporter la sauvegarde</string>
+    <string name="action_import">Importer une sauvegarde</string>
+    <string name="backup_export_success">Sauvegarde enregistrée · enregistrements : %1$d</string>
+    <string name="backup_export_failed">Impossible d\'enregistrer la sauvegarde</string>
+    <string name="backup_import_result">Importés : %1$d · Ignorés : %2$d</string>
+    <string name="backup_import_failed">Impossible de lire le fichier de sauvegarde</string>
 </resources>
