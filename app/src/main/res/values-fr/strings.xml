@@ -1,0 +1,83 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">Rien pour l\'instant</string>
+    <string name="list_empty_body">Enregistrez un événement et sa date.</string>
+    <string name="relative_today">Aujourd\'hui</string>
+    <plurals name="relative_future_days">
+        <item quantity="one">dans %d jour</item>
+        <item quantity="many">dans %d jours</item>
+        <item quantity="other">dans %d jours</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="one">dans %d semaine</item>
+        <item quantity="many">dans %d semaines</item>
+        <item quantity="other">dans %d semaines</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="one">dans %d mois</item>
+        <item quantity="many">dans %d mois</item>
+        <item quantity="other">dans %d mois</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="one">dans %d an</item>
+        <item quantity="many">dans %d ans</item>
+        <item quantity="other">dans %d ans</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="one">il y a %d jour</item>
+        <item quantity="many">il y a %d jours</item>
+        <item quantity="other">il y a %d jours</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="one">il y a %d semaine</item>
+        <item quantity="many">il y a %d semaines</item>
+        <item quantity="other">il y a %d semaines</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="one">il y a %d mois</item>
+        <item quantity="many">il y a %d mois</item>
+        <item quantity="other">il y a %d mois</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="one">il y a %d an</item>
+        <item quantity="many">il y a %d ans</item>
+        <item quantity="other">il y a %d ans</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">Nouvel événement</string>
+    <string name="edit_edit_title">Modifier l\'événement</string>
+    <string name="field_title_label">Que s\'est-il passé ?</string>
+    <string name="field_title_placeholder">ex. Résilier la carte bancaire</string>
+    <string name="field_date_label">Quand ?</string>
+    <string name="field_note_label">Note (facultatif)</string>
+    <string name="kind_all_day">Toute la journée</string>
+    <string name="kind_timed">Heure précise</string>
+    <plurals name="remind_label">
+        <item quantity="one">Me rappeler %d jour avant</item>
+        <item quantity="many">Me rappeler %d jours avant</item>
+        <item quantity="other">Me rappeler %d jours avant</item>
+    </plurals>
+    <string name="cd_pick_date">Choisir une date</string>
+    <string name="cd_pick_time">Choisir une heure</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">Note</string>
+
+    <!-- Actions -->
+    <string name="action_add">Ajouter</string>
+    <string name="action_back">Retour</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_save">Enregistrer</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_edit">Modifier</string>
+    <string name="action_discard">Abandonner</string>
+    <string name="action_keep_editing">Continuer la modification</string>
+    <string name="common_ok">OK</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">Supprimer cet événement ?</string>
+    <string name="delete_dialog_message">Cette action est irréversible.</string>
+    <string name="discard_dialog_title">Abandonner les modifications ?</string>
+    <string name="discard_dialog_message">Vos modifications seront perdues.</string>
+</resources>

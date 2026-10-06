@@ -1,0 +1,83 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">Nada todavía</string>
+    <string name="list_empty_body">Registra un evento y cuándo ocurrió.</string>
+    <string name="relative_today">Hoy</string>
+    <plurals name="relative_future_days">
+        <item quantity="one">en %d día</item>
+        <item quantity="many">en %d días</item>
+        <item quantity="other">en %d días</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="one">en %d semana</item>
+        <item quantity="many">en %d semanas</item>
+        <item quantity="other">en %d semanas</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="one">en %d mes</item>
+        <item quantity="many">en %d meses</item>
+        <item quantity="other">en %d meses</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="one">en %d año</item>
+        <item quantity="many">en %d años</item>
+        <item quantity="other">en %d años</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="one">hace %d día</item>
+        <item quantity="many">hace %d días</item>
+        <item quantity="other">hace %d días</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="one">hace %d semana</item>
+        <item quantity="many">hace %d semanas</item>
+        <item quantity="other">hace %d semanas</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="one">hace %d mes</item>
+        <item quantity="many">hace %d meses</item>
+        <item quantity="other">hace %d meses</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="one">hace %d año</item>
+        <item quantity="many">hace %d años</item>
+        <item quantity="other">hace %d años</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">Nuevo evento</string>
+    <string name="edit_edit_title">Editar evento</string>
+    <string name="field_title_label">¿Qué pasó?</string>
+    <string name="field_title_placeholder">p. ej., cancelar la tarjeta de crédito</string>
+    <string name="field_date_label">¿Cuándo?</string>
+    <string name="field_note_label">Nota (opcional)</string>
+    <string name="kind_all_day">Todo el día</string>
+    <string name="kind_timed">Hora concreta</string>
+    <plurals name="remind_label">
+        <item quantity="one">Recordarme %d día antes</item>
+        <item quantity="many">Recordarme %d días antes</item>
+        <item quantity="other">Recordarme %d días antes</item>
+    </plurals>
+    <string name="cd_pick_date">Elegir fecha</string>
+    <string name="cd_pick_time">Elegir hora</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">Nota</string>
+
+    <!-- Actions -->
+    <string name="action_add">Añadir</string>
+    <string name="action_back">Atrás</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_discard">Descartar</string>
+    <string name="action_keep_editing">Seguir editando</string>
+    <string name="common_ok">Aceptar</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">¿Eliminar este evento?</string>
+    <string name="delete_dialog_message">Esta acción no se puede deshacer.</string>
+    <string name="discard_dialog_title">¿Descartar los cambios?</string>
+    <string name="discard_dialog_message">Se perderán tus cambios.</string>
+</resources>

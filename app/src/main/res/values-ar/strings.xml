@@ -1,0 +1,110 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">لا شيء بعد</string>
+    <string name="list_empty_body">سجّل حدثًا ووقت وقوعه.</string>
+    <string name="relative_today">اليوم</string>
+    <plurals name="relative_future_days">
+        <item quantity="zero">بعد %d يوم</item>
+        <item quantity="one">بعد %d يوم</item>
+        <item quantity="two">بعد يومين</item>
+        <item quantity="few">بعد %d أيام</item>
+        <item quantity="many">بعد %d يومًا</item>
+        <item quantity="other">بعد %d يوم</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="zero">بعد %d أسبوع</item>
+        <item quantity="one">بعد %d أسبوع</item>
+        <item quantity="two">بعد أسبوعين</item>
+        <item quantity="few">بعد %d أسابيع</item>
+        <item quantity="many">بعد %d أسبوعًا</item>
+        <item quantity="other">بعد %d أسبوع</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="zero">بعد %d شهر</item>
+        <item quantity="one">بعد %d شهر</item>
+        <item quantity="two">بعد شهرين</item>
+        <item quantity="few">بعد %d أشهر</item>
+        <item quantity="many">بعد %d شهرًا</item>
+        <item quantity="other">بعد %d شهر</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="zero">بعد %d سنة</item>
+        <item quantity="one">بعد %d سنة</item>
+        <item quantity="two">بعد سنتين</item>
+        <item quantity="few">بعد %d سنوات</item>
+        <item quantity="many">بعد %d سنة</item>
+        <item quantity="other">بعد %d سنة</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="zero">قبل %d يوم</item>
+        <item quantity="one">قبل %d يوم</item>
+        <item quantity="two">قبل يومين</item>
+        <item quantity="few">قبل %d أيام</item>
+        <item quantity="many">قبل %d يومًا</item>
+        <item quantity="other">قبل %d يوم</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="zero">قبل %d أسبوع</item>
+        <item quantity="one">قبل %d أسبوع</item>
+        <item quantity="two">قبل أسبوعين</item>
+        <item quantity="few">قبل %d أسابيع</item>
+        <item quantity="many">قبل %d أسبوعًا</item>
+        <item quantity="other">قبل %d أسبوع</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="zero">قبل %d شهر</item>
+        <item quantity="one">قبل %d شهر</item>
+        <item quantity="two">قبل شهرين</item>
+        <item quantity="few">قبل %d أشهر</item>
+        <item quantity="many">قبل %d شهرًا</item>
+        <item quantity="other">قبل %d شهر</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="zero">قبل %d سنة</item>
+        <item quantity="one">قبل %d سنة</item>
+        <item quantity="two">قبل سنتين</item>
+        <item quantity="few">قبل %d سنوات</item>
+        <item quantity="many">قبل %d سنة</item>
+        <item quantity="other">قبل %d سنة</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">حدث جديد</string>
+    <string name="edit_edit_title">تعديل الحدث</string>
+    <string name="field_title_label">ماذا حدث؟</string>
+    <string name="field_title_placeholder">مثال: إلغاء بطاقة الائتمان</string>
+    <string name="field_date_label">متى؟</string>
+    <string name="field_note_label">ملاحظة (اختياري)</string>
+    <string name="kind_all_day">طوال اليوم</string>
+    <string name="kind_timed">وقت محدد</string>
+    <plurals name="remind_label">
+        <item quantity="zero">ذكّرني قبل %d يوم</item>
+        <item quantity="one">ذكّرني قبل %d يوم</item>
+        <item quantity="two">ذكّرني قبل يومين</item>
+        <item quantity="few">ذكّرني قبل %d أيام</item>
+        <item quantity="many">ذكّرني قبل %d يومًا</item>
+        <item quantity="other">ذكّرني قبل %d يوم</item>
+    </plurals>
+    <string name="cd_pick_date">اختر تاريخًا</string>
+    <string name="cd_pick_time">اختر وقتًا</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">ملاحظة</string>
+
+    <!-- Actions -->
+    <string name="action_add">إضافة</string>
+    <string name="action_back">رجوع</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_save">حفظ</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_edit">تعديل</string>
+    <string name="action_discard">تجاهل</string>
+    <string name="action_keep_editing">متابعة التعديل</string>
+    <string name="common_ok">حسنًا</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">حذف هذا الحدث؟</string>
+    <string name="delete_dialog_message">لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="discard_dialog_title">تجاهل التغييرات؟</string>
+    <string name="discard_dialog_message">ستفقد تعديلاتك.</string>
+</resources>

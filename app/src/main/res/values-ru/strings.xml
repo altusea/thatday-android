@@ -1,0 +1,92 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">Пока ничего</string>
+    <string name="list_empty_body">Запишите событие и его дату.</string>
+    <string name="relative_today">Сегодня</string>
+    <plurals name="relative_future_days">
+        <item quantity="one">через %d день</item>
+        <item quantity="few">через %d дня</item>
+        <item quantity="many">через %d дней</item>
+        <item quantity="other">через %d дня</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="one">через %d неделю</item>
+        <item quantity="few">через %d недели</item>
+        <item quantity="many">через %d недель</item>
+        <item quantity="other">через %d недели</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="one">через %d месяц</item>
+        <item quantity="few">через %d месяца</item>
+        <item quantity="many">через %d месяцев</item>
+        <item quantity="other">через %d месяца</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="one">через %d год</item>
+        <item quantity="few">через %d года</item>
+        <item quantity="many">через %d лет</item>
+        <item quantity="other">через %d года</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="one">%d день назад</item>
+        <item quantity="few">%d дня назад</item>
+        <item quantity="many">%d дней назад</item>
+        <item quantity="other">%d дня назад</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="one">%d неделю назад</item>
+        <item quantity="few">%d недели назад</item>
+        <item quantity="many">%d недель назад</item>
+        <item quantity="other">%d недели назад</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="one">%d месяц назад</item>
+        <item quantity="few">%d месяца назад</item>
+        <item quantity="many">%d месяцев назад</item>
+        <item quantity="other">%d месяца назад</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="one">%d год назад</item>
+        <item quantity="few">%d года назад</item>
+        <item quantity="many">%d лет назад</item>
+        <item quantity="other">%d года назад</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">Новое событие</string>
+    <string name="edit_edit_title">Изменить событие</string>
+    <string name="field_title_label">Что произошло?</string>
+    <string name="field_title_placeholder">например, закрыть кредитную карту</string>
+    <string name="field_date_label">Когда?</string>
+    <string name="field_note_label">Заметка (необязательно)</string>
+    <string name="kind_all_day">Весь день</string>
+    <string name="kind_timed">Точное время</string>
+    <plurals name="remind_label">
+        <item quantity="one">Напомнить за %d день</item>
+        <item quantity="few">Напомнить за %d дня</item>
+        <item quantity="many">Напомнить за %d дней</item>
+        <item quantity="other">Напомнить за %d дня</item>
+    </plurals>
+    <string name="cd_pick_date">Выбрать дату</string>
+    <string name="cd_pick_time">Выбрать время</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">Заметка</string>
+
+    <!-- Actions -->
+    <string name="action_add">Добавить</string>
+    <string name="action_back">Назад</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_edit">Изменить</string>
+    <string name="action_discard">Отменить</string>
+    <string name="action_keep_editing">Продолжить</string>
+    <string name="common_ok">ОК</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">Удалить это событие?</string>
+    <string name="delete_dialog_message">Это действие необратимо.</string>
+    <string name="discard_dialog_title">Отменить изменения?</string>
+    <string name="discard_dialog_message">Ваши изменения будут потеряны.</string>
+</resources>

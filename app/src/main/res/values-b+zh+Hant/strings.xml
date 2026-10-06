@@ -1,0 +1,65 @@
+<resources>
+    <!-- List -->
+    <string name="list_empty_title">還沒有記錄</string>
+    <string name="list_empty_body">記一個 event，和它發生的時間。</string>
+    <string name="relative_today">今天</string>
+    <plurals name="relative_future_days">
+        <item quantity="other">%d 天後</item>
+    </plurals>
+    <plurals name="relative_future_weeks">
+        <item quantity="other">%d 週後</item>
+    </plurals>
+    <plurals name="relative_future_months">
+        <item quantity="other">%d 個月後</item>
+    </plurals>
+    <plurals name="relative_future_years">
+        <item quantity="other">%d 年後</item>
+    </plurals>
+    <plurals name="relative_past_days">
+        <item quantity="other">%d 天前</item>
+    </plurals>
+    <plurals name="relative_past_weeks">
+        <item quantity="other">%d 週前</item>
+    </plurals>
+    <plurals name="relative_past_months">
+        <item quantity="other">%d 個月前</item>
+    </plurals>
+    <plurals name="relative_past_years">
+        <item quantity="other">%d 年前</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_new_title">記一件</string>
+    <string name="edit_edit_title">改一件</string>
+    <string name="field_title_label">什麼事？</string>
+    <string name="field_title_placeholder">例如：信用卡銷戶</string>
+    <string name="field_date_label">什麼時候？</string>
+    <string name="field_note_label">備註（可以空著）</string>
+    <string name="kind_all_day">全天</string>
+    <string name="kind_timed">指定時間</string>
+    <plurals name="remind_label">
+        <item quantity="other">提前 %d 天提醒我</item>
+    </plurals>
+    <string name="cd_pick_date">選擇日期</string>
+    <string name="cd_pick_time">選擇時間</string>
+
+    <!-- Detail -->
+    <string name="detail_note_header">備註</string>
+
+    <!-- Actions -->
+    <string name="action_add">記一件</string>
+    <string name="action_back">返回</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_save">記下</string>
+    <string name="action_delete">刪除</string>
+    <string name="action_edit">修改</string>
+    <string name="action_discard">放棄</string>
+    <string name="action_keep_editing">繼續編輯</string>
+    <string name="common_ok">確定</string>
+
+    <!-- Dialogs -->
+    <string name="delete_dialog_title">刪除這條記錄？</string>
+    <string name="delete_dialog_message">刪除後無法恢復。</string>
+    <string name="discard_dialog_title">放棄修改？</string>
+    <string name="discard_dialog_message">未儲存的內容會遺失。</string>
+</resources>
